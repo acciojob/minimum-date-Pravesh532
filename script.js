@@ -1,5 +1,12 @@
 function minDate(dates) {
   //write you code here
+	 let minDate = new Date(dates.reduce((min,date)=> new Date(date) < new Date(min) ? date:min))
+     
+    let year = minDate.getFullYear();
+    let month = String(minDate.getMonth() + 1).padStart(2, '0'); // 
+    let day = String(minDate.getDate()).padStart(2, '0'); // Ensure 
+    
+    return `${year}/${month}/${day}`;
 }
 
 // Do not change the code
